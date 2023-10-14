@@ -19,7 +19,12 @@ const BooksCard = ({ elm }) => {
         >
           <div className="absolute right-1 top-2 max-w-1/2 truncate text-sm flex gap-2">
             Page : {elm.pages}
-            <button onClick={() => handleEdit(elm.id)}>edit</button>
+            <button
+              onClick={() => handleEdit(elm.id)}
+              className="bg-sky-500 px-1 cursor-pointer rounded text-white text-xs"
+            >
+              edit
+            </button>
           </div>
           <div className="absolute left-1 top-2 max-w-1/2 truncate text-sm">
             Year : {elm.year}
@@ -37,11 +42,7 @@ const BooksCard = ({ elm }) => {
         </div>
       </div>
 
-      <EditModal
-        open={open}
-        handleOpen={handleOpen}
-        data={elm}
-      />
+      <EditModal open={open} handleOpen={handleOpen} data={elm} />
     </>
   );
 };
